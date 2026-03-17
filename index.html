@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teresa Murray | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="home" class="hero">
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-social">
+      <a href="https://www.behance.net" target="_blank" rel="noreferrer"><img src="Behance.svg" alt="Behance icon" class="social-icon" /></a>
+      <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"><img src="LinkedIn.svg" alt="LinkedIn icon" class="social-icon" /></a>
+      <a href="https://www.twitter.com" target="_blank" rel="noreferrer"><img src="Twitter.svg" alt="Twitter icon" class="social-icon" /></a>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="eyebrow">Software Engineer | Data Science + Backend</p>
+        <h1>Teresa Murray</h1>
+        <h2>Welcome to my portfolio</h2>
+        <p>
+          I’m Teresa, a Software Engineer with a background in Data Science. I build backend solutions using Python and SQL that simplify workflows and deliver results.
+        </p>
+        <a href="#" class="cta-btn">View Case Studies</a>
+      </div>
+      <img src="Teresa M.jpg" alt="Teresa portrait" class="profile-pic" />
+    </div>
+  </header>
+  <footer class="site-footer">
+    <p>© 2026 Teresa Murray • Built with HTML and CSS</p>
+  </footer>
+  <main>
+    <section id="skills" class="skills-section">
+      <div class="skills">
+        <h3>Skills</h3>
+        <div class="skills-grid">
+          <div class="skill">Python</div>
+          <div class="skill">SQL</div>
+          <div class="skill">FastAPI</div>
+          <div class="skill">Data Modeling</div>
+          <div class="skill">Git</div>
+          <div class="skill">Testing</div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects-section">
+      <div class="projects">
+        <h3>Projects</h3>
+        <div class="project-grid">
+          <article class="project-card"><h4>Workflow API</h4><p>Built a Flask API to automate reporting pipelines using PostgreSQL and Redis caching.</p></article>
+          <article class="project-card"><h4>Data Dashboard</h4><p>Designed an analytics dashboard with Plotly and Streamlit for team metrics transparency.</p></article>
+          <article class="project-card"><h4>Inventory Engine</h4><p>Implemented inventory reconciliation and ETL jobs with Python, SQL, and Airflow.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact-section">
+      <div class="contact-panel">
+        <h3>Contact Me</h3>
+        <p>Send a message and let's discuss your next product or project.</p>
+        <form class="contact-form" action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+          <button type="submit" class="primary-btn">Send Message</button>
+        <div id="contactFeedback" class="contact-feedback" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <div class="back-to-top" id="backToTop" aria-label="Back to top">↑</div>
+  <script>
+    const form = document.querySelector('.contact-form');
+    const feedback = document.getElementById('contactFeedback');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      feedback.textContent = 'Thanks! Your message has been sent.';
+      feedback.style.opacity = '1';
+      setTimeout(() => { feedback.style.opacity = '0'; }, 3000);
+      form.reset();
+    });
+    const back = document.getElementById('backToTop');
+    back.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => {
+      back.style.opacity = window.scrollY > 300 ? '1' : '0';
+      back.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+    });
+  </script>
+</body>
+</html>
